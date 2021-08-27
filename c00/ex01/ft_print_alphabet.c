@@ -8,7 +8,7 @@ void	ft_priunt_alphabet(void)
 	while (c <= 'z')
 	{
 		write(1, &c, 1);
-		c++;	
+		c++;
 	}
 	return ;
 }
