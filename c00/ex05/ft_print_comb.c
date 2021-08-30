@@ -1,39 +1,24 @@
 #include <unistd.h>
 
-void	ft_put_int(int i)
-{
-	char	*num;
-
-	num = "0123456789";
-	write(1, num + i, 1);
-	return ;
-}
-
-void	ft_print_nums(int a, int b, int c)
-{
-	ft_put_int(a);
-	ft_put_int(b);
-	ft_put_int(c);
-	return ;
-}
-
 void	ft_print_comb(void)
 {
-	int		a;
-	int		b;
-	int		c;
+	char	a;
+	char	b;
+	char	c;
 
-	a = 0;
-	while (a <= 7)
+	a = '0';
+	while (a <= '7')
 	{
 		b = a + 1;
-		while (b <= 8)
+		while (b <= '8')
 		{
 			c = b + 1;
-			while (c <= 9)
+			while (c <= '9')
 			{
-				ft_print_nums(a, b, c);
-				if (a != 7 || b != 8 || c != 9)
+				write(1, &a, 1);
+				write(1, &b, 1);
+				write(1, &c, 1);
+				if (a != '7' || b != '8' || c != '9')
 					write(1, ", ", 2);
 				c++;
 			}
@@ -42,4 +27,10 @@ void	ft_print_comb(void)
 		a++;
 	}
 	return ;
+}
+
+int	main(void)
+{
+	ft_print_comb();
+	return (0);
 }
